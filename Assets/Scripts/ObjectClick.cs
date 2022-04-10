@@ -13,12 +13,13 @@ public class ObjectClick : MonoBehaviour
         if (Input.GetMouseButtonDown(0) == true)
         {
             RaycastCube();
+            rotSpeedChange(20);
         }
 
         //On RightMouseButton
         else if (Input.GetMouseButtonDown(1) == true)
         {
-
+            rotSpeedChange(-20);
         }
     }
 
@@ -42,6 +43,11 @@ public class ObjectClick : MonoBehaviour
         cubeRenderer.material.SetColor("_Color", UnityEngine.Random.ColorHSV());
     }
 
-
+    //Changes the Sphere rotation speed in the "Rotation" script
+    void rotSpeedChange(int Speed)
+    {
+        GameObject sphere = GameObject.Find("Sphere");
+        sphere.SendMessage("IncreaseRotationSpeed", Speed);
+    }
 
 }

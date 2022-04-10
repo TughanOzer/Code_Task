@@ -26,4 +26,15 @@ public class Rotation : MonoBehaviour
     }
 
 
+    //Increase and reduction of the rotation speed by the ObjectClick script
+    public void IncreaseRotationSpeed(int addSpeed)
+    {
+        rotationSpeed += addSpeed;
+    }
+
+    public void ReduceRotationSpeed(int reduceSpeed)
+    {
+        rotationSpeed -= reduceSpeed;
+    }
+
 }
