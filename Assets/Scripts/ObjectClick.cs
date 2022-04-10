@@ -47,7 +47,7 @@ public class ObjectClick : MonoBehaviour
     void rotSpeedChange(int Speed)
     {
         GameObject sphere = GameObject.Find("Sphere");
-        sphere.SendMessage("IncreaseRotationSpeed", Speed);
+        sphere.SendMessage("ChangeRotationSpeed", Speed);
     }
 
 }
