@@ -6,6 +6,12 @@ public class ObjectClick : MonoBehaviour
 {
 
     private GameObject hitObject;
+    private GameObject sphere;
+
+    private void Start()
+    {
+        sphere = GameObject.Find("Sphere");
+    }
 
     void Update()
     {
@@ -36,11 +42,14 @@ public class ObjectClick : MonoBehaviour
         }
     }
 
-    //Sets a new random color of object
+    //Sets a new random color of cube and sphere
     void RandColor()
     {
         var cubeRenderer = hitObject.GetComponent<Renderer>();
         cubeRenderer.material.SetColor("_Color", UnityEngine.Random.ColorHSV());
+
+        var sphereRenderer = sphere.GetComponent<Renderer>();
+        sphereRenderer.material.SetColor("_Color", UnityEngine.Random.ColorHSV());
     }
 
     //Changes the Sphere rotation speed in the "Rotation" script
